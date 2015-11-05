@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root to: 'site#home'
+  post '/search', to: 'site#result'
+
   resources :tracks
   resources :releases
   resources :artists

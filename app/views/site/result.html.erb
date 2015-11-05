@@ -1,0 +1,16 @@
+<h3>Search Results</h3>
+
+<p>
+  You searched for "<%= @term %>"
+</p>
+<% if @results.present? %>
+  <p>Here are the results:</p>
+<% else %>
+  <p>Your search did not return any results</p>
+<% end %>
+
+<ol>
+  <% @results.each do |item| %>
+    <%= content_tag_for(:li, item) {link_to(item.display_name, item)}%>
+  <% end %>
+</ol>
